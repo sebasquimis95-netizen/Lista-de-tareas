@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello - Mis tableros</title>
+    <link rel="stylesheet" href="trello.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Organizador de Tareas</div>
+
+        <div class="espacios-dropdown"></div>
+    </div>
+
+    <div class="main-content">
+        <!-- Columna izquierda: botón crear tablero -->
+        <div class="left-panel">
+            <button class="btn-crear" id="btnAbrirModal">+ Crear tablero</button>
+        </div>
+
+        <!-- Columna derecha: lista de tableros -->
+        <div class="right-panel">
+            <h2>Tus tableros</h2>
+            <div id="lista-tableros" class="tableros-grid">
+                <!-- Se llena con JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para crear tablero -->
+    <div id="modalCrear" class="modal">
+        <div class="modal-content">
+            <h2>Crear tablero</h2>
+            <label for="titulo">Título del tablero *</label>
+            <input type="text" id="titulo" placeholder="Ej: Proyecto nuevo" required>
+            <small id="error-titulo" style="color: red; display: none;">Es necesario indicar el título del tablero</small>
+            <div class="modal-buttons">
+                <button class="btn-cancelar" id="btnCancelar">Cancelar</button>
+                <button class="btn-crear-tablero" id="btnCrearTablero">Crear</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para confirmar eliminación de tablero -->
+ <div id="modalEliminar" class="modal">
+    <div class="modal-content">
+        <h2>Eliminar tablero</h2>
+        <p id="mensajeEliminar">¿Estás seguro de que quieres eliminar este tablero?</p>
+        <div class="modal-buttons">
+            <button class="btn-cancelar" id="btnCancelarEliminar">Cancelar</button>
+            <button class="btn-crear-tablero" id="btnConfirmarEliminar">Eliminar</button>
+        </div>
+    </div>
+ </div>
+    <script src="trello.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello - Tablero</title>
+    <link rel="stylesheet" href="tablero.css">
+</head>
+<body>
+    <div class="board-container">
+        <div class="board-header">
+            <h1 class="board-title" id="board-title"></h1>
+            <a href="index.html" class="btn-volver">← Volver a mis tableros</a>
+        </div>
+
+        <div class="lists-container" id="lists-container">
+            <!-- Las listas y el botón se renderizarán aquí -->
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para eliminar lista -->
+    <div class="modal-overlay" id="deleteListModal" style="display: none;">
+        <div class="modal-content">
+            <h3>Eliminar lista</h3>
+            <p id="modalMessage">¿Eliminar esta lista y todas sus tarjetas?</p>
+            <div class="modal-buttons">
+                <button class="cancel-btn" id="cancelDelete">Cancelar</button>
+                <button class="confirm-btn" id="confirmDelete">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para añadir lista (CORREGIDO) -->
+    <div class="modal-overlay" id="addListModal">
+        <div class="modal-content">
+            <h3>Crear nueva lista</h3>
+            <p>Introduce el nombre de la lista</p>
+            <input type="text" id="new-list-name" placeholder="Ej: Pendientes" autofocus>
+            <div class="modal-error" id="addListError"></div>
+            <div class="modal-buttons">
+                <button class="cancel-btn" id="cancelAddList">Cancelar</button>
+                <button class="confirm-btn" id="confirmAddList">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EL SCRIPT SUELTO DEBE ELIMINARSE (desde "// Elementos" hasta el final) -->
+    <!-- Por lo tanto, borra todo lo que está entre las líneas siguientes: 
+         <script>
+         // Elementos
+         const addListBtn = ...
+         ...
+         </script>
+    -->
+
+    <script src="tablero.js"></script> <!-- Tu JS principal -->
+</body>
+</html>
